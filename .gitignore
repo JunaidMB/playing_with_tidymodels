@@ -2,3 +2,4 @@
 .Rprofile
 .Rproj.user
 renv
+.DS_Store
