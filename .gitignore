@@ -1,3 +1,4 @@
-tidymodels_git.Rproj
-renv
+.Rhistory
+.Rprofile
 .Rproj.user
+renv
