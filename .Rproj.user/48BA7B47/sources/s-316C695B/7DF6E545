@@ -1,0 +1,24 @@
+{
+    "id": "7DF6E545",
+    "path": "~/Developer/playing_with_tidymodels/tidymodels_git/applying_recipes_to_fields.R",
+    "project_path": "applying_recipes_to_fields.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1618421918026.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "cursorPosition": "15,33",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1618421995,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1618421995749,
+    "read_only": false,
+    "read_only_alternatives": []
+}
