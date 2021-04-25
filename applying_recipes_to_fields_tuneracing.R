@@ -6,6 +6,10 @@ library(tidyverse)
 library(ROSE)
 library(themis)
 library(vip)
+library(parallel)
+library(doParallel)
+library(finetune)
+library(ranger)
 
 # Create Fake Data ----
 ## Generate column values
@@ -95,8 +99,9 @@ rf_grid <- grid_random(mtry() %>% finalize(df %>% dplyr::select(values, crop)), 
 
 ## Fit Model with resampling - Resampling is always used with the training set.
 set.seed(234)
-folds <- vfold_cv(df_train, v = 10)
+folds <- group_vfold_cv(data = df_train, group = "fields")
 folds
+
 
 ## Tune candidate models in the grid
 # Via parallel processing
