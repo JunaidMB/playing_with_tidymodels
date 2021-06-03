@@ -1,6 +1,6 @@
 # Repository of Tidymodels template scripts in R
 
-I will be using this repository to store scripts in R that have demonstrated features with the tidymodels framework. Since the tidymodels framework is complicated and has multiple variations of what can be done (a list growing weekly), this repository is where I will keep completed scripts so I can refer to them in future when building models using the tidymodels framework. 
+I will be using this repository to store scripts in R that demonstrate features using the tidymodels framework. Since the tidymodels framework has multiple variations of what can be done, this repository is where I will keep completed scripts so I can refer to them in future when building models using the tidymodels framework. 
 
 Although there is no one archetype of the tidymodels workflow, there are some repeating patterns worth recording in the README for a quick tidymodels script. Those patterns are recorded in a code block in this README.
 
@@ -147,3 +147,9 @@ boost_tree(
 
 
 ```
+
+## Useful Links
+* [TidyModels Docs](https://www.tidymodels.org/start/)
+* [Tidymodels Book](https://www.tmwr.org/)
+* [Julia Silge Blog](https://juliasilge.com/blog/)
+* [Tidyverse Blog](https://www.tidyverse.org/blog/)
