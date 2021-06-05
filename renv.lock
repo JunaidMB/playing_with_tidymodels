@@ -23,6 +23,13 @@
       "Repository": "CRAN",
       "Hash": "e4c04affc2cac20c8fec18385cd14691"
     },
+    "BradleyTerry2": {
+      "Package": "BradleyTerry2",
+      "Version": "1.1-2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "1dbcbf5476731afea8f25ca8b1f6db6c"
+    },
     "DBI": {
       "Package": "DBI",
       "Version": "1.1.1",
@@ -197,6 +204,20 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "9addc7e2c5954eca5719928131fed98c"
+    },
+    "boot": {
+      "Package": "boot",
+      "Version": "1.3-25",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "bd51734a754b6c2baf28b2d1ebc11e91"
+    },
+    "brglm": {
+      "Package": "brglm",
+      "Version": "0.7.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "7f17830e33bd76bbdda221423988fbe6"
     },
     "broom": {
       "Package": "broom",
@@ -506,6 +527,13 @@
       "Repository": "CRAN",
       "Hash": "ac5c6baf7822ce8732b343f14c072c4d"
     },
+    "gtools": {
+      "Package": "gtools",
+      "Version": "3.8.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "0a749b4458d19a54acae93c64e3e7c85"
+    },
     "hardhat": {
       "Package": "hardhat",
       "Version": "0.1.5",
@@ -667,6 +695,13 @@
       "Repository": "CRAN",
       "Hash": "0bde42ee282efb18c7c4e63822f5b4f7"
     },
+    "lme4": {
+      "Package": "lme4",
+      "Version": "1.1-26",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "5f2466f5127e0ce67e44bb381387eeca"
+    },
     "lubridate": {
       "Package": "lubridate",
       "Version": "1.7.10",
@@ -709,6 +744,13 @@
       "Repository": "CRAN",
       "Hash": "fec5f52652d60615fdb3957b3d74324a"
     },
+    "minqa": {
+      "Package": "minqa",
+      "Version": "1.2.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "eaee7d2a6f3ed4491df868611cb064cc"
+    },
     "mlr": {
       "Package": "mlr",
       "Version": "2.19.0",
@@ -743,6 +785,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "662f52871983ff3e3ef042c62de126df"
+    },
+    "nloptr": {
+      "Package": "nloptr",
+      "Version": "1.2.2.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "2737faeee353704efec5afa1e943dd64"
     },
     "nnet": {
       "Package": "nnet",
@@ -835,6 +884,13 @@
       "Repository": "CRAN",
       "Hash": "c243bf70db3a6631a0c8783152fb7db9"
     },
+    "profileModel": {
+      "Package": "profileModel",
+      "Version": "0.6.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "ee136a72d7a53c16ca6cfeac78cb8431"
+    },
     "progress": {
       "Package": "progress",
       "Version": "1.2.2",
@@ -876,6 +932,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "755d9f2b53c376a05f5ce3bf2d124821"
+    },
+    "qvcalc": {
+      "Package": "qvcalc",
+      "Version": "1.0.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "dcf6e926ba6606bf46f19e4eaaed19d9"
     },
     "randomForest": {
       "Package": "randomForest",
@@ -1038,6 +1101,13 @@
       "Repository": "CRAN",
       "Hash": "947e4e02a79effa5d512473e10f41797"
     },
+    "statmod": {
+      "Package": "statmod",
+      "Version": "1.4.35",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "53c27113461e8abbe2dc7125e22b2a39"
+    },
     "stringi": {
       "Package": "stringi",
       "Version": "1.5.3",
@@ -1191,6 +1261,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "160db58e0fd753a5a9afb86dfbe7b007"
+    },
+    "workflowsets": {
+      "Package": "workflowsets",
+      "Version": "0.0.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "c73ab2e1540fca83b3e0b1ff79ef5f4a"
     },
     "xfun": {
       "Package": "xfun",
