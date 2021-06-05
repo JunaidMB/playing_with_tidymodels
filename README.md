@@ -1,4 +1,4 @@
-# Repository of Tidymodels template scripts in R
+# Repository of R Tidymodels Template Scripts
 
 I will be using this repository to store scripts in R that demonstrate features using the tidymodels framework. Since the tidymodels framework has multiple variations of what can be done, this repository is where I will keep completed scripts so I can refer to them in future when building models using the tidymodels framework. 
 
