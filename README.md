@@ -129,20 +129,8 @@ xgb_fit_final %>%
 ## Computed on baked training data - the model is fit to all the training data once again
 
 set.seed(123)
-boost_tree(
-  trees = 1000,
-  tree_depth = xgb_best_model$tree_depth,
-  min_n = xgb_best_model$min_n,
-  loss_reduction = xgb_best_model$loss_reduction,
-  sample_size = xgb_best_model$sample_size,
-  mtry = xgb_best_model$mtry,
-  learn_rate = xgb_best_model$learn_rate
-) %>% 
-  set_engine("xgboost") %>% 
-  set_mode("classification") %>% 
-  fit(red_density_state ~ .,
-      data = df_train_bake %>% dplyr::select({ID columns}) # Remove ID columns
-  ) %>% 
+final_xgb_model %>%
+  pull_workflow_fit() %>%
   vip(geom = "point", all_permutations = TRUE)
 
 
