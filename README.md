@@ -133,6 +133,12 @@ final_xgb_model %>%
   pull_workflow_fit() %>%
   vip(geom = "point", all_permutations = TRUE)
 
+# Save Model and Metrics ----
+## Extract final fitted workflow
+xgb_wf_model <- xgb_fit_final$.workflow[[1]]
+
+## Save Model
+saveRDS(xgb_wf_model, file = "xgb_saved_model.rds")
 
 ```
 
@@ -280,6 +286,23 @@ rf_workflow %>%
   fit(data = df) %>%
   pull_workflow_fit() %>% 
   vip(geom = "point", all_permutations = TRUE)
+
+```
+
+## Tidymodels - Saving and Loading Fitted Workflows
+
+Following on from the single workflow XGBoost example. We saved a workflow, after last fit, as an RDS object. We load the RDS object and call the predict function on the new data. 
+
+```
+# Read in fitted workflow
+xgb_wf_model <- readRDS(file = "xgb_saved_model.rds")
+
+# New data - Must have a similar structure to the training data
+newdata <- read_csv("newdata.csv")
+
+# Predict on newdata with loaded workflow 
+xgh_wf_model %>% 
+  predict(newdata)
 
 ```
 

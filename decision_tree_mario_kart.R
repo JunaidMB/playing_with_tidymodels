@@ -4,6 +4,8 @@ library(themis)
 library(vip)
 library(finetune)
 library(doParallel)
+library(butcher)
+library(here)
 
 # Blog Link: https://juliasilge.com/blog/mario-kart/
 # Predict if a Mario Kart World Record was achieved using a shortcut or not. Will use a Decision Tree Model for prediction.
@@ -124,5 +126,14 @@ decision_tree(
   vip(geom = "point", all_permutations = TRUE)
 
 
+# Save Model and Metrics ----
+tree_wf_model <- tree_fit_final$.workflow[[1]]
 
+#predict(tree_wf_model, records_test[5,]) # Feed test data and it generates predictions
 
+## Save metrics
+collect_metrics(tree_fit_final) %>% 
+  write_csv(here::here("saved_models", "tree_model_metrics_mariokart.csv"))
+
+## Save Model
+saveRDS(tree_wf_model, here::here("saved_models", "tree_wf_model_mariokart.rds"))
