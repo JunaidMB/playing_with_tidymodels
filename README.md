@@ -231,6 +231,7 @@ doParallel::registerDoParallel(cl) # Register Backend
 set.seed(123)
 df_models <- df_models %>%
   workflow_map(resamples = df_folds,
+               seed = 1,  
                grid = 5,
                control = control_grid(save_pred = TRUE),
                metrics = metric_set(roc_auc, accuracy),
@@ -253,26 +254,44 @@ df_models %>%
 autoplot(df_models, metric = "roc_auc")
 
 # Select Best Model ----
+best_model <- df_models %>%
+  rank_results(rank_metric = "roc_auc") %>%
+  filter(.metric == "roc_auc" & rank == 1) %>%
+  pull(wflow_id)
+
 best_results <- df_models %>% 
-  pull_workflow_set_result("unnormalized_random_forest") %>% 
+  pull_workflow_set_result(best_model) %>% 
   select_best(metric = "roc_auc")
 
 # Finalize Model ----
-rf_workflow <- df_models %>% 
-  pull_workflow("unnormalized_random_forest")
+best_workflow <- df_models %>% 
+  pull_workflow(best_model)
 
-rf_workflow_fit <- rf_workflow %>% 
+best_workflow_fit <- best_workflow %>% 
   finalize_workflow(best_results) %>% 
   fit(data = df_train)
+  
+## Training Data Confusion Matrix
+best_workflow_fit %>%
+  predict(df_train) %>%
+  bind_cols(df_train) %>%
+  conf_mat(Y, .pred_class)
 
 # Evaluate on Test Set ----
+final_best_workflow_fit <- best_workflow_fit %>%
+  last_fit(df_split)
+
 ## Make a table of Model Predictions
-test_pred <- rf_workflow_fit %>% 
+test_pred <- final_best_workflow_fit %>% 
+  pull(.workflow[[1]]) %>%
+  '[['(1) %>%
   predict(df_test, type = "prob") %>% 
   bind_cols(df_test)
 
 ## Compute Confusion Matrix on Test Set
-test_conf_mat <- rf_workflow_fit %>% 
+test_conf_mat <- final_best_workflow_fit %>% 
+  pull(.workflow[[1]]) %>%
+  '[['(1) %>%
   predict(df_test) %>% 
   bind_cols(df_test) %>% 
   conf_mat(Y, .pred_class)
@@ -281,9 +300,9 @@ test_conf_mat <- rf_workflow_fit %>%
 ## Computed on baked training data - the model is fit to all the training data once again
 set.seed(123)
 
-rf_workflow %>% 
+best_workflow %>% 
   finalize_workflow(best_results) %>% 
-  fit(data = df) %>%
+  fit(data = df_train) %>%
   pull_workflow_fit() %>% 
   vip(geom = "point", all_permutations = TRUE)
 
