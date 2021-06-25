@@ -214,7 +214,8 @@ rf_param <-
 xgb_param <- 
   xgb_spec %>% 
   parameters() %>% 
-  update(mtry = mtry() %>% finalize(df %>% dplyr::select(-X_i, -Y)))
+  update(mtry = mtry() %>% finalize(df %>% dplyr::select(-X_i, -Y)),
+         learn_rate = threshold(c(0.001, 0.005))) 
 
 ## Add the parameters as options to workflowset, specify the id so we know which model's parameters are being changed
 df_models <- df_models %>% 
