@@ -333,3 +333,4 @@ xgh_wf_model %>%
 * [Tidymodels Book](https://www.tmwr.org/)
 * [Julia Silge Blog](https://juliasilge.com/blog/)
 * [Tidyverse Blog](https://www.tidyverse.org/blog/)
+* [Max Kuhn Presentation](https://www.youtube.com/watch?v=2OfTEakSFXQ&t)
