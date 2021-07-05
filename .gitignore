@@ -5,3 +5,4 @@ renv
 .DS_Store
 tidymodels_git.Rproj
 .RData
+catboost_info

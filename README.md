@@ -91,6 +91,17 @@ xgb_tuned <- xgb_workflow %>%
 ## View performance metrics across all hyperparameter permutations
 xgb_tuned %>% 
   collect_metrics()
+  
+# Plot for tuning parameter performance ----
+## ROC_AUC
+xgb_tuned %>% 
+  show_best(metric = "roc_auc", n = 10) %>% 
+  tidyr::pivot_longer(tree_depth:learn_rate, names_to = "variable", values_to = "value" ) %>% 
+  ggplot(mapping = aes(value, mean)) +
+  geom_line(alpha=1/2)+
+  geom_point()+
+  facet_wrap(~variable, scales = "free")+
+  ggtitle("Best parameters for ROC")
 
 # Finalise Model ----
 ## Update workflow with the best model found
