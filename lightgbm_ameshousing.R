@@ -11,7 +11,6 @@ remotes::install_github("curso-r/treesnip")
 library(treesnip)
 library(devtools)
 devtools::install_github("curso-r/rightgbm")
-rightgbm::install_lightgbm()
 library(rightgbm)
 library(lightgbm)
 
@@ -106,7 +105,7 @@ lightgbm_best_model <- lightgbm_tuned %>%
   select_best(metric = "rmse")
 
 final_lightgbm_workflow <- lightgbm_workflow %>% 
-  finalize_workflow(catboost_best_model)
+  finalize_workflow(lightgbm_best_model)
 
 ## Fit the final model to all the training data
 final_lightgbm_model <- final_lightgbm_workflow %>% 
