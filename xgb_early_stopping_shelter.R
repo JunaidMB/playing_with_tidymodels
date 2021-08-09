@@ -128,4 +128,4 @@ xgb_fit_final %>%
 xgb_wf_model <- xgb_fit_final$.workflow[[1]]
 
 ## Save Model 
-saveRDS(xgb_wf_model, file = "shelter_xgb_saved_model.rds")
+saveRDS(xgb_wf_model, file = "./saved_models/shelter_xgb_saved_model.rds")
