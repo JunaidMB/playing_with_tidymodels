@@ -332,7 +332,7 @@ xgb_wf_model <- readRDS(file = "xgb_saved_model.rds")
 newdata <- read_csv("newdata.csv")
 
 # Predict on newdata with loaded workflow 
-xgh_wf_model %>% 
+xgb_wf_model %>% 
   predict(newdata)
 
 ```
