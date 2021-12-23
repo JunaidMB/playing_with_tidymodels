@@ -154,10 +154,10 @@ xgb_wf_model <- xgb_fit_final$.workflow[[1]]
 
 ## Save Model
 ### Measure object size of workflow
-obj_size(xgb_wf_model)
+lobstr::obj_size(xgb_wf_model)
 
 ### Weigh in the workflow, the objects that are taking up the most memory
-weigh(xgb_wf_model)
+butcher::weigh(xgb_wf_model)
 
 ### Butcher workflow to take up less space
 xgb_wf_model_reduced <- butcher::butcher(xgb_wf_model)
