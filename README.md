@@ -4,6 +4,8 @@ I will be using this repository to store scripts in R that demonstrate features 
 
 Although there is no one archetype of the tidymodels workflow, there are some repeating patterns worth recording in the README for a quick tidymodels script. Those patterns are recorded in a code block in this README.
 
+**NOTE (At 23/12/2021)**: The tidymodels package is moving away from the `pull_*` functions used for extracting models/ objects from the workflow/ workflowset object to `extract_*` functions. The function names are largely the same but the word 'pull' is replaced by 'extract'. 
+
 ## Tidymodels - General Workflow (Single Workflow)
 
 Note: This is pseudocode, don't try to run this directly! The example model is xgboost.
@@ -149,7 +151,22 @@ final_xgb_model %>%
 xgb_wf_model <- xgb_fit_final$.workflow[[1]]
 
 ## Save Model
-saveRDS(xgb_wf_model, file = "xgb_saved_model.rds")
+### Measure object size of workflow
+obj_size(xgb_wf_model)
+
+### Weigh in the workflow, the objects that are taking up the most memory
+weigh(xgb_wf_model)
+
+### Butcher workflow to take up less space
+xgb_wf_model_reduced <- butcher::butcher(xgb_wf_model)
+
+### Check size difference
+print(obj_size(xgb_wf_model))
+print(obj_size(xgb_wf_model_reduced))
+obj_size(xgb_wf_model) - obj_size(xgb_wf_model_reduced) 
+
+### Save model object as an RDS object
+saveRDS(xgb_wf_model_reduced, file = "xgb_saved_model.rds")
 
 ```
 
